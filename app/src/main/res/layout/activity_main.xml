@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewCtrl"
+            type="com.example.jason.studypro.viewCtrl.MainCtrl" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.example.jason.studypro.myView.MyTextShowView
+                android:layout_width="match_parent"
+                android:layout_height="200px" />
+
+            <com.example.jason.studypro.myView.LyricTextView
+                android:id="@+id/lyric_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#44000000"
+                android:onClick="@{(view) -> viewCtrl.onClickLyric(view)}"
+                app:changed_color="#ff0000"
+                app:default_color="#000000"
+                app:direction="right"
+                app:progress="0.7"
+                app:text="abcdefghijklmnopqrst"
+                app:text_size="26sp" />
+
+            <SeekBar
+                android:id="@+id/seek_bar1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="10"/>
+            <SeekBar
+                android:id="@+id/seek_bar2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="10"/>
+            <Button
+                android:onClick="@{(view) -> viewCtrl.onClickObjectAnimation(view)}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{(view) -> viewCtrl.onClickRecycle(view)}"
+                android:text="@string/recycle_view" />
+            <com.example.jason.studypro.myView.PrograssPointView
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="edit"
+                android:onClick="@{(view) -> viewCtrl.onClickToAutoSize(view)}"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PSW_TEXT"
+                android:onClick="@{(view) -> viewCtrl.onClickPsw(view)}"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Glide"
+                android:onClick="@{() -> viewCtrl.onClickGlide()}"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bind"
+                android:onClick="@{() -> viewCtrl.onClickBind()}"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ViewPage"
+                android:onClick="@{() -> viewCtrl.onClickViewPage()}"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RxJava2"
+                android:onClick="@{() -> viewCtrl.onClickRXjava2()}"/>
+            <com.example.jason.studypro.myView.ImageProcessView
+                android:id="@+id/image_process"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <!--<com.example.jason.studypro.myView.TextShowView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="30px"-->
+            <!--app:text="测试文字"-->
+            <!--app:text_size="26sp"/>-->
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
