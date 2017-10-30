@@ -13,16 +13,16 @@ import com.example.jason.studypro.viewModel.NoteModel;
  * <p/>
  */
 public class NoteEditCtrl {
-    private NoteModel viewModel;
-    private  ActNoteEditBinding binding;
-    public NoteEditCtrl( ActNoteEditBinding binding ){
+    private NoteModel          viewModel;
+    private ActNoteEditBinding binding;
+
+    public NoteEditCtrl(ActNoteEditBinding binding) {
         viewModel = new NoteModel();
         this.binding = binding;
     }
 
-    public void onClickSave(View view){
-        Log.i(this.getClass().getName(),"save edit");
-
+    public void onClickSave(View view) {
+        Log.i(this.getClass().getName(), "save edit");
     }
 
     public NoteModel getViewModel() {

@@ -8,7 +8,6 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-
 /**
  * Author: Yangyd
  * E-mail: yangyd@erongdu.com
@@ -16,8 +15,6 @@ import android.view.View;
  * <p/>
  */
 public class PrograssPointView extends View {
-
-
     private Paint paint;
 
     public PrograssPointView(Context context) {

@@ -8,6 +8,7 @@ package com.example.jason.studypro.common;
  */
 public class TestJava {
     private static ReadBookInter interBook = new EnglishBook();
+
     public static void main(String[] args) {
         System.out.println(interBook.getBookName());
     }

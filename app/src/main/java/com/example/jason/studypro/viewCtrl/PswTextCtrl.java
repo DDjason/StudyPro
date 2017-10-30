@@ -55,11 +55,11 @@ public class PswTextCtrl {
     public void onClickPsw(View view) {
         Log.i(this.getClass().getName(), binding.pswText.getPsw());
         Call<HttpResponse> call = retrofit.create(MyService.class).groupList(binding.pswText.getPsw());
-        Log.i("Service Proxy",new Gson().toJson(retrofit.create(MyService.class).getClass().getSimpleName()));
+        Log.i("Service Proxy", new Gson().toJson(retrofit.create(MyService.class).getClass().getSimpleName()));
         call.enqueue(new Callback<HttpResponse>() {
             @Override
             public void onResponse(Call<HttpResponse> call, Response<HttpResponse> response) {
-                Log.i("onResponse",response.body().getRequest() + ":::answer");
+                Log.i("onResponse", response.body().getRequest() + ":::answer");
             }
 
             @Override

@@ -88,6 +88,11 @@
                 android:layout_height="wrap_content"
                 android:text="ViewPage"
                 android:onClick="@{() -> viewCtrl.onClickViewPage()}"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="友盟"
+                android:onClick="@{(view) -> viewCtrl.onClickUM(view)}"/>
 
             <Button
                 android:layout_width="match_parent"

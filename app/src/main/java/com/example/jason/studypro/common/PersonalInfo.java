@@ -16,6 +16,4 @@ public class PersonalInfo {
     public void setTime(String time) {
         this.time = time;
     }
-
-
 }

@@ -11,11 +11,11 @@ import java.io.Serializable;
 public class Observable<T> implements Serializable {
     private T mValue;
 
-    public Observable(){
+    public Observable() {
 
     }
 
-    public Observable(T mValue){
+    public Observable(T mValue) {
         this.mValue = mValue;
     }
 

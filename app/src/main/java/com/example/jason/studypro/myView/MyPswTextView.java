@@ -13,40 +13,35 @@ import android.view.View;
  * Date: 2017/9/18$ 17:32$
  * <p/>
  */
-public class MyPswTextView extends View{
-
-
+public class MyPswTextView extends View {
     //绘制原点
     private Paint paintDot;
 
-    public MyPswTextView(Context context){
-        this(context,null);
+    public MyPswTextView(Context context) {
+        this(context, null);
     }
 
-    public MyPswTextView(Context context, AttributeSet attrs){
-        super(context,attrs);
+    public MyPswTextView(Context context, AttributeSet attrs) {
+        super(context, attrs);
         initPaint();
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        setMeasuredDimension(widthMeasureSpec,heightMeasureSpec);
+        setMeasuredDimension(widthMeasureSpec, heightMeasureSpec);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawCircle(5,7,5,paintDot);
+        canvas.drawCircle(5, 7, 5, paintDot);
     }
 
-
-    private void initPaint(){
+    private void initPaint() {
         paintDot = new Paint();
         paintDot.setColor(Color.BLUE);
         paintDot.setAntiAlias(true);
         paintDot.setStrokeWidth(2);
         paintDot.setStyle(Paint.Style.FILL);
-
-
     }
 }

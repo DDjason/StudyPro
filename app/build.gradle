@@ -60,10 +60,10 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     compile 'com.github.bumptech.glide:glide:3.7.0'
-
     //RxJava
     compile 'io.reactivex.rxjava2:rxjava:2.0.0'
     compile 'org.reactivestreams:reactive-streams:1.0.0'
-
     compile project(':tool')
+    compile files('libs/weiboSDKCore.jar')
+    compile files('libs/umeng_shareboard_widget.jar')
 }

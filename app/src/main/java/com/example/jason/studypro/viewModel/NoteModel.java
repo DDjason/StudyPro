@@ -11,7 +11,7 @@ import com.example.jason.studypro.BR;
  * Date: 2017/9/25$ 16:08$
  * <p/>
  */
-public class NoteModel extends BaseObservable{
+public class NoteModel extends BaseObservable {
     private String note_text;
 
     @Bindable

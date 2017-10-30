@@ -21,17 +21,19 @@ public class MyTextShowView extends View {
     private Paint paintText;
     //画笔-线
     private Paint paintLine;
-    private Rect bounds;
-    public MyTextShowView(Context context){
-        this(context,null);
+    private Rect  bounds;
+
+    public MyTextShowView(Context context) {
+        this(context, null);
     }
-    public MyTextShowView(Context context, AttributeSet attrs){
-        super(context,attrs);
+
+    public MyTextShowView(Context context, AttributeSet attrs) {
+        super(context, attrs);
         toolInit();
     }
 
     //初始化
-    private void toolInit(){
+    private void toolInit() {
         paintLine = new Paint();
         paintLine.setColor(Color.RED);
 
@@ -48,8 +50,8 @@ public class MyTextShowView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawText(text_show,0,115,paintText);
-        canvas.drawLine(0,115,3000,115,paintLine);
+        canvas.drawText(text_show, 0, 115, paintText);
+        canvas.drawLine(0, 115, 3000, 115, paintLine);
         canvas.restore();
     }
 }

@@ -19,24 +19,23 @@ import java.nio.channels.FileChannel;
  */
 public class Test {
     public static void main(String[] args) {
-        File s = new File("D:\\test.rar");
-        File t = new File("D:\\to.rar");
+        File s   = new File("D:\\test.rar");
+        File t   = new File("D:\\to.rar");
         File sss = new File("D:\\to3.rar");
 
-        long startt,endt;
+        long startt, endt;
         startt = System.currentTimeMillis();
         fileChannelCopy(s, new File("D:\\to1.rar"));
         endt = System.currentTimeMillis();
-        System.out.println(startt + "  "+ endt +  " "+(endt-startt)+"\n");
+        System.out.println(startt + "  " + endt + " " + (endt - startt) + "\n");
         startt = System.currentTimeMillis();
         copy(s, new File("D:\\to2.rar"));
         endt = System.currentTimeMillis();
-        System.out.println(startt + "  "+ endt +  " "+(endt-startt)+"\n");
+        System.out.println(startt + "  " + endt + " " + (endt - startt) + "\n");
         startt = System.currentTimeMillis();
         copy2(s, sss.toString());
         endt = System.currentTimeMillis();
-        System.out.println(startt + "  "+ endt +  " "+(endt-startt)+"\n");
-
+        System.out.println(startt + "  " + endt + " " + (endt - startt) + "\n");
     }
 
     public static void fileChannelCopy(File s, File t) {
@@ -62,36 +61,36 @@ public class Test {
                 e.printStackTrace();
             }
         }
-
     }
 
-    public static void copy(File s,File t){
+    public static void copy(File s, File t) {
         InputStream  in  = null;
         OutputStream out = null;
-        try{
+        try {
             in = new BufferedInputStream(new FileInputStream(s));
             out = new BufferedOutputStream(new FileOutputStream(t));
             byte[] bytes = new byte[2048];
-            while (in.read(bytes) != -1){
-                out.write(bytes,0,1);
+            while (in.read(bytes) != -1) {
+                out.write(bytes, 0, 1);
             }
-
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
-            try{
-                if (null != in){
+        } finally {
+            try {
+                if (null != in) {
                     in.close();
                 }
-                if (null != out){
+                if (null != out) {
                     out.close();
                 }
-            }catch (IOException ioe){
+            } catch (IOException ioe) {
                 ioe.printStackTrace();
             }
         }
     }
+
     private static Integer BUFFER_SIZE = 1024 * 1024 * 10;
+
     public static boolean copy2(File sourceFile, String targetFile) {
         FileInputStream  inputStream  = null;
         FileOutputStream outputStream = null;

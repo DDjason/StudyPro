@@ -16,17 +16,15 @@ import java.util.Date;
  * <p/>
  */
 @Entity(indexes = {
-        @Index(value = "text,date DESC",unique = true)
+        @Index(value = "text,date DESC", unique = true)
 })
 public class Note {
     @Id
-    private Long id;
-
+    private Long     id;
     @NotNull
-    private String text;
-    private String comment;
-    private Date date;
-
+    private String   text;
+    private String   comment;
+    private Date     date;
     @Convert(converter = NoteTypeConverter.class, columnType = String.class)
     private NoteType type;
 

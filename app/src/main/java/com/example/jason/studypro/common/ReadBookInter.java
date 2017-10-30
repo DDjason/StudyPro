@@ -8,7 +8,10 @@ package com.example.jason.studypro.common;
  */
 public interface ReadBookInter {
     String defaultName = "default";
+
     String getBookName();
+
     String getBookCount();
+
     void readBook();
 }

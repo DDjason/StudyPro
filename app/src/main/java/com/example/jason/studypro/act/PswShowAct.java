@@ -18,7 +18,7 @@ import com.example.jason.studypro.viewCtrl.PswTextCtrl;
  * <p/>
  */
 @Route(path = RoutePath.PSWTEXT_VIEW_SHOW)
-public class PswShowAct extends Activity{
+public class PswShowAct extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

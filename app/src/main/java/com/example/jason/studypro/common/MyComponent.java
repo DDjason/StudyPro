@@ -6,6 +6,5 @@ package com.example.jason.studypro.common;
  * Date: 2017/10/9$ 11:42$
  * <p/>
  */
-public class MyComponent  {
-
+public class MyComponent {
 }

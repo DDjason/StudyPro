@@ -11,7 +11,7 @@ import com.example.jason.studypro.BR;
  * Date: 2017/10/9$ 9:07$
  * <p/>
  */
-public class GlideLoadModel extends BaseObservable{
+public class GlideLoadModel extends BaseObservable {
     private String imageUrl;
 
     @Bindable

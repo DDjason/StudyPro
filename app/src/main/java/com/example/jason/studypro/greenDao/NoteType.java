@@ -7,5 +7,5 @@ package com.example.jason.studypro.greenDao;
  * <p/>
  */
 public enum NoteType {
-    TEXT,LIST,PICTURE
+    TEXT, LIST, PICTURE
 }

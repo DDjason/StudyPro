@@ -10,10 +10,11 @@ import android.util.Log;
  */
 public class EnglishBook extends BaseBook {
     private String defaultName = "EnglishBook";
-    private String counts = "";
+    private String counts      = "";
+
     @Override
     void getBook() {
-        Log.i(this.getClass().getName(),"类名");
+        Log.i(this.getClass().getName(), "类名");
     }
 
     @Override

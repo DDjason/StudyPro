@@ -12,7 +12,6 @@ import com.example.jason.studypro.BR;
  * <p/>
  */
 public class PrivateUser extends BaseObservable {
-
     private String fistName;
     private String lastName;
 

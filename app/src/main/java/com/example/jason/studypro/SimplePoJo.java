@@ -9,13 +9,14 @@ package com.example.jason.studypro;
 public class SimplePoJo {
     private String name;
     private String age;
-    public SimplePoJo(){
+
+    public SimplePoJo() {
 
     }
 
-    public SimplePoJo(String name,String age){
-        this.name   = name;
-        this.age    = age;
+    public SimplePoJo(String name, String age) {
+        this.name = name;
+        this.age = age;
     }
 
     public String getName() {
@@ -26,10 +27,7 @@ public class SimplePoJo {
         return age;
     }
 
-    public static class InnerSimplePojo{
+    public static class InnerSimplePojo {
         public static final String info = "Inner";
-
-
     }
-
 }

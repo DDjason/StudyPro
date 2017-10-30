@@ -8,7 +8,7 @@ import org.greenrobot.greendao.converter.PropertyConverter;
  * Date: 2017/9/25$ 15:49$
  * <p/>
  */
-public class NoteTypeConverter implements PropertyConverter<NoteType,String>{
+public class NoteTypeConverter implements PropertyConverter<NoteType, String> {
     @Override
     public NoteType convertToEntityProperty(String databaseValue) {
         return NoteType.valueOf(databaseValue);

@@ -22,23 +22,19 @@ import com.example.jason.studypro.R;
 public class LyricTextView extends View {
     private static int DEFAULT_COLOR = 0xff000000;
     private static int CHANGED_COLOR = 0xffff0000;
-    public static int LEFT = 0;
-    public static int RIGHT = 1;
+    public static  int LEFT          = 0;
+    public static  int RIGHT         = 1;
     private int    direction;//渐变方向
     private String text;
-
-
     private float  textSize;
     private int    defaultColor; //默认颜色
     private int    changeColor; //渐变颜色
     private float  progress; //渐变比例
-
     private Paint  paint;
     private int    textWidth; //text的宽高
     private int    textHeight;
     private int    width; //控件宽高
     private int    height;
-
 
     public LyricTextView(Context context) {
         this(context, null);
@@ -52,12 +48,14 @@ public class LyricTextView extends View {
         super(context, attrs, defStyleAttr);
         TypedArray t = context.obtainStyledAttributes(attrs, R.styleable.LyricTextView);
         text = t.getString(R.styleable.LyricTextView_text);
-        if(null == text){text = "";}
+        if (null == text) {
+            text = "";
+        }
         textSize = t.getDimension(R.styleable.LyricTextView_text_size, sp2px(16));
         defaultColor = t.getColor(R.styleable.LyricTextView_default_color, DEFAULT_COLOR);
         changeColor = t.getColor(R.styleable.LyricTextView_changed_color, CHANGED_COLOR);
         direction = t.getInt(R.styleable.LyricTextView_direction, LEFT);
-        progress = t.getFloat(R.styleable.LyricTextView_progress,0);
+        progress = t.getFloat(R.styleable.LyricTextView_progress, 0);
         t.recycle();
 
         initPaint();
@@ -80,7 +78,6 @@ public class LyricTextView extends View {
         textHeight = (int) (-fontMetrics.ascent + fontMetrics.descent);
 
         textWidth = (int) paint.measureText(text, 0, text.length());
-
     }
 
     @Override
@@ -97,7 +94,7 @@ public class LyricTextView extends View {
         int size = MeasureSpec.getSize(measureSpec);
         switch (mode) {
             case MeasureSpec.EXACTLY:
-                Log.d("ccy",isWidth+"exactly");
+                Log.d("ccy", isWidth + "exactly");
                 break;
             case MeasureSpec.AT_MOST:
             case MeasureSpec.UNSPECIFIED:
@@ -106,7 +103,7 @@ public class LyricTextView extends View {
                 } else {
                     size = textHeight;
                 }
-                Log.d("ccy",isWidth+"at most");
+                Log.d("ccy", isWidth + "at most");
                 break;
         }
         return isWidth ? (size + getPaddingLeft() + getPaddingRight()) : (size + getPaddingTop() + getPaddingBottom());
@@ -119,18 +116,21 @@ public class LyricTextView extends View {
         drawText(canvas, direction, progress);
     }
 
-
     private void drawText(Canvas canvas, int direction, float progress) {
 
         int startX;
         int endX;
-        int realWidth = (getMeasuredWidth() - getPaddingLeft() - getPaddingRight());
+        int realWidth  = (getMeasuredWidth() - getPaddingLeft() - getPaddingRight());
         int realHeight = (getMeasuredHeight() - getPaddingTop() - getPaddingBottom());
-        int textLeft = getPaddingLeft() + realWidth / 2 - textWidth / 2;   //文本在控件中的起始x位置
-        int textRight = getPaddingLeft() + realWidth / 2 + textWidth / 2;   // 文本在控件中的结束x位置
+        int textLeft   = getPaddingLeft() + realWidth / 2 - textWidth / 2;   //文本在控件中的起始x位置
+        int textRight  = getPaddingLeft() + realWidth / 2 + textWidth / 2;   // 文本在控件中的结束x位置
         int textBottom = getPaddingTop() + realHeight / 2 + textHeight / 2;  //文本在控件中的结束y位置
-        if(progress < 0 ){progress = 0;}
-        if(progress > 1 ){progress = 1;}
+        if (progress < 0) {
+            progress = 0;
+        }
+        if (progress > 1) {
+            progress = 1;
+        }
         int changedWidth = (int) (textWidth * progress);
         if (direction == LEFT) {
             startX = textLeft;
@@ -156,9 +156,7 @@ public class LyricTextView extends View {
         //        canvas.drawText(text, textLeft, textBottom , paint);
         canvas.drawText(text, textLeft, textBottom - fontMetrics.descent, paint);
         canvas.restore();
-
     }
-
 
     //以下settre getter供外部设置属性,别忘记invalidate();
 
@@ -234,7 +232,6 @@ public class LyricTextView extends View {
         invalidate();
     }
 
-
     //工具
     private float dp2px(int dp) {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, getResources().getDisplayMetrics());
@@ -243,6 +240,4 @@ public class LyricTextView extends View {
     private float sp2px(int sp) {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, getResources().getDisplayMetrics());
     }
-
-
 }

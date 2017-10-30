@@ -1,5 +1,6 @@
 package com.example.jason.studypro.viewCtrl;
 
+import android.Manifest;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
@@ -8,18 +9,25 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.SeekBar;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.example.jason.studypro.AndroidUtil;
 import com.example.jason.studypro.common.Comparaobj;
 import com.example.jason.studypro.common.PersonalInfo;
 import com.example.jason.studypro.constant.RoutePath;
 import com.example.jason.studypro.databinding.ActivityMainBinding;
 import com.example.jason.tool.FileUtil;
+import com.google.gson.Gson;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -146,6 +154,7 @@ public class MainCtrl {
     public void onClickPsw(View view) {
         ARouter.getInstance().build(RoutePath.PSWTEXT_VIEW_SHOW).navigation();
     }
+
     public void onClickGlide() {
         ARouter.getInstance().build(RoutePath.Glide_Lode_SHOW).navigation();
     }
@@ -153,12 +162,50 @@ public class MainCtrl {
     public void onClickBind() {
         ARouter.getInstance().build(RoutePath.Bind_Adapter_SHOW).navigation();
     }
+
     public void onClickViewPage() {
         ARouter.getInstance().build(RoutePath.PAGE_VIEW_SHOW).navigation();
     }
+
     public void onClickRXjava2() {
         ARouter.getInstance().build(RoutePath.RX_JAVA_SHOW).navigation();
     }
+
+    public void onClickUM(View view){
+        if(Build.VERSION.SDK_INT>=23){
+            String[] mPermissionList = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.CALL_PHONE,Manifest.permission.READ_LOGS,Manifest.permission.READ_PHONE_STATE, Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.SET_DEBUG_APP,Manifest.permission.SYSTEM_ALERT_WINDOW,Manifest.permission.GET_ACCOUNTS,Manifest.permission.WRITE_APN_SETTINGS};
+            ActivityCompat.requestPermissions(AndroidUtil.getActivity(view),mPermissionList,123);
+        }
+
+        new ShareAction(AndroidUtil.getActivity(view))
+                .withText("hello")
+                .setCallback(new UMShareListener() {
+                    @Override
+                    public void onStart(SHARE_MEDIA share_media) {
+                        Log.i("onStart",new Gson().toJson(share_media));
+                    }
+
+                    @Override
+                    public void onResult(SHARE_MEDIA share_media) {
+                        Log.i("onResult",new Gson().toJson(share_media));
+
+                    }
+
+                    @Override
+                    public void onError(SHARE_MEDIA share_media, Throwable throwable) {
+                        Log.i("onError",new Gson().toJson(share_media));
+
+                    }
+
+                    @Override
+                    public void onCancel(SHARE_MEDIA share_media) {
+                        Log.i("onCancel",new Gson().toJson(share_media));
+
+                    }
+                })
+                .open();
+    }
+
     public void onClickLyric(View view) {
         ObjectAnimator animator = ObjectAnimator.ofFloat(binding.lyricList, "progress", 0f, 1f);
         animator.setDuration(3000);

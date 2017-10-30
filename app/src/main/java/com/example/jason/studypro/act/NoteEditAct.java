@@ -23,7 +23,6 @@ public class NoteEditAct extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActNoteEditBinding binding = DataBindingUtil.setContentView(this, R.layout.act_note_edit);
-        binding.setViewCtrl(new NoteEditCtrl(  binding));
-
+        binding.setViewCtrl(new NoteEditCtrl(binding));
     }
 }

@@ -11,7 +11,7 @@ import com.example.jason.studypro.BR;
  * Date: 2017/9/26$ 11:34$
  * <p/>
  */
-public class RecycleModel extends BaseObservable{
+public class RecycleModel extends BaseObservable {
     private String editInput;
 
     @Bindable

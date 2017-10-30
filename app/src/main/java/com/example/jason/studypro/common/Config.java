@@ -7,6 +7,6 @@ package com.example.jason.studypro.common;
  * <p/>
  */
 public class Config {
-    public static Observable<String> PATH = new Observable<>(null);
+    public static Observable<String>  PATH    = new Observable<>(null);
     public static Observable<Boolean> isDebug = new Observable<>();
 }

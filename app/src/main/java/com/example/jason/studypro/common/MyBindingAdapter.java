@@ -13,7 +13,6 @@ import com.example.jason.studypro.viewModel.PrivateUser;
  * <p/>
  */
 public class MyBindingAdapter {
-
     @BindingAdapter({"text"})
     public void setText(View textView, PrivateUser user) {
         Log.d("setText", "isCalled");

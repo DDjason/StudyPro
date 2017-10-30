@@ -18,19 +18,20 @@ import java.util.List;
  * Date: 2017/10/9$ 16:38$
  * <p/>
  */
-public class ViewPageCtrl{
-    private List<View> viewList;//view数组
-    private List<CharSequence> titleList;
-    private PagerAdapter pagerAdapter;
+public class ViewPageCtrl {
+    private List<View>                     viewList;//view数组
+    private List<CharSequence>             titleList;
+    private PagerAdapter                   pagerAdapter;
     private ViewPager.OnPageChangeListener pageChangeListener;
-    private VPageModel viewModel;
-    public ViewPageCtrl(LayoutInflater inflater1){
+    private VPageModel                     viewModel;
+
+    public ViewPageCtrl(LayoutInflater inflater1) {
         viewModel = new VPageModel();
         viewModel.setProcess(0);
         LayoutInflater inflater = inflater1;
-        View view1 = inflater.inflate(R.layout.view_page_layout1, null);
-        View view2 = inflater.inflate(R.layout.view_page_layout2,null);
-        View view3 = inflater.inflate(R.layout.view_page_layout3, null);
+        View           view1    = inflater.inflate(R.layout.view_page_layout1, null);
+        View           view2    = inflater.inflate(R.layout.view_page_layout2, null);
+        View           view3    = inflater.inflate(R.layout.view_page_layout3, null);
 
         viewList = new ArrayList<View>();// 将要分页显示的View装入数组中
         viewList.add(view1);
@@ -42,7 +43,6 @@ public class ViewPageCtrl{
         titleList.add("333");
 
         pagerAdapter = new PagerAdapter() {
-
             @Override
             public int getCount() {
                 return viewList.size();
@@ -65,7 +65,6 @@ public class ViewPageCtrl{
             public Object instantiateItem(ViewGroup container, int position) {
                 // TODO Auto-generated method stub
                 container.addView(viewList.get(position));
-
 
                 return viewList.get(position);
             }

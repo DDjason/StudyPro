@@ -20,7 +20,7 @@ public class GreenDaoHelper {
         //初始化建议放在Application中进行
         if (mInstance == null) {
             //创建数据库"info.db"
-           // devOpenHelper = new DaoMaster.DevOpenHelper(MyApplication.getContext(), "info.db", null);
+            // devOpenHelper = new DaoMaster.DevOpenHelper(MyApplication.getContext(), "info.db", null);
             //获取可写数据库
             database = devOpenHelper.getWritableDatabase();
             //获取数据库对象

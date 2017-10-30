@@ -18,7 +18,7 @@ import com.example.jason.studypro.viewCtrl.ViewPageCtrl;
  * <p/>
  */
 @Route(path = RoutePath.PAGE_VIEW_SHOW)
-public class VpageShowAct extends Activity{
+public class VpageShowAct extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

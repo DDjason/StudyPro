@@ -26,7 +26,6 @@ public class MytestJava {
         });
         service.getResulr("32");
 
-
         String   input = "13 15 16 16 19 20 20 21 22 22 25 25 25 25 30 33 33 35 35 35 35 36 40 45 46 52 70";
         String[] array = input.split(" ");
         HashMap  map   = new HashMap<Integer, Integer>();

@@ -11,14 +11,14 @@ import com.example.jason.studypro.common.Config;
  * Date: 2017/9/13$ 10:54$
  * <p/>
  */
-public class MyApplication extends Application{
+public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
         basicInit();
     }
 
-    private void basicInit(){
+    private void basicInit() {
         Config.isDebug.setmValue(true);
         if (Config.isDebug.getmValue()) {
             ARouter.openLog();     // 打印日志
@@ -26,5 +26,4 @@ public class MyApplication extends Application{
         }
         ARouter.init(this);
     }
-
 }

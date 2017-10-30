@@ -9,7 +9,7 @@ import android.view.View;
  * <p/>
  */
 public class AutoSizeCtrl {
-    public void onCLickButton(View view){
+    public void onCLickButton(View view) {
 
     }
 }

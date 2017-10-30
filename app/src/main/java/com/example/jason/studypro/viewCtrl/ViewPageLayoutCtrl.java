@@ -7,7 +7,7 @@ package com.example.jason.studypro.viewCtrl;
  * <p/>
  */
 public class ViewPageLayoutCtrl {
-    public ViewPageLayoutCtrl(){
+    public ViewPageLayoutCtrl() {
 
     }
 }

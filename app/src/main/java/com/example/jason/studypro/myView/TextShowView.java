@@ -19,17 +19,13 @@ import com.example.jason.studypro.R;
  * <p/>
  */
 public class TextShowView extends View {
-
     private String text;
-
     private int    textWidth; //text的宽高
     private int    textHeight;
     private int    width; //控件宽高
     private int    height;
     private float  textsize;
-
-    private Paint paint;
-
+    private Paint  paint;
 
     public String getText() {
         return text;
@@ -48,27 +44,25 @@ public class TextShowView extends View {
         init_Paint();
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TextShowView);
         text = typedArray.getString(R.styleable.TextShowView_text);
-        if (null == text){
+        if (null == text) {
             text = "";
         }
-        textsize = typedArray.getDimension(R.styleable.TextShowView_text_size,sp2px(16));
-
+        textsize = typedArray.getDimension(R.styleable.TextShowView_text_size, sp2px(16));
     }
 
-    private void init_Paint(){
+    private void init_Paint() {
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setTextSize(textsize);
     }
-
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         //控件高度
-        width = measure(widthMeasureSpec,true);
-        height = measure(heightMeasureSpec,false);
-        setMeasuredDimension(width,height);
+        width = measure(widthMeasureSpec, true);
+        height = measure(heightMeasureSpec, false);
+        setMeasuredDimension(width, height);
     }
 
     @Override
@@ -80,16 +74,16 @@ public class TextShowView extends View {
 
         int startX;
         int endX;
-        int realWidth = (getMeasuredWidth() - getPaddingLeft() - getPaddingRight());
+        int realWidth  = (getMeasuredWidth() - getPaddingLeft() - getPaddingRight());
         int realHeight = (getMeasuredHeight() - getPaddingTop() - getPaddingBottom());
-        int textLeft = getPaddingLeft() + realWidth / 2 - textWidth / 2;   //文本在控件中的起始x位置
-        int textRight = getPaddingLeft() + realWidth / 2 + textWidth / 2;   // 文本在控件中的结束x位置
+        int textLeft   = getPaddingLeft() + realWidth / 2 - textWidth / 2;   //文本在控件中的起始x位置
+        int textRight  = getPaddingLeft() + realWidth / 2 + textWidth / 2;   // 文本在控件中的结束x位置
         int textBottom = getPaddingTop() + realHeight / 2 + textHeight / 2;  //文本在控件中的结束y位置
-    //    canvas.clipRect(0, 0, 200, 20);
-        canvas.drawText(text,textLeft,textBottom,paint);
+        //    canvas.clipRect(0, 0, 200, 20);
+        canvas.drawText(text, textLeft, textBottom, paint);
         paint.setColor(Color.BLUE);
-      //  canvas.clipRect(0, 0, 100, 20);
-        canvas.drawText(text,textLeft,textBottom,paint);
+        //  canvas.clipRect(0, 0, 100, 20);
+        canvas.drawText(text, textLeft, textBottom, paint);
     }
 
     private int measure(int measureSpec, boolean isWidth) {
@@ -97,7 +91,7 @@ public class TextShowView extends View {
         int size = MeasureSpec.getSize(measureSpec);
         switch (mode) {
             case MeasureSpec.EXACTLY:
-                Log.d("ccy",isWidth+"exactly");
+                Log.d("ccy", isWidth + "exactly");
                 break;
             case MeasureSpec.AT_MOST:
             case MeasureSpec.UNSPECIFIED:
@@ -106,7 +100,7 @@ public class TextShowView extends View {
                 } else {
                     size = textHeight;
                 }
-                Log.d("ccy",isWidth+"at most");
+                Log.d("ccy", isWidth + "at most");
                 break;
         }
         return isWidth ? (size + getPaddingLeft() + getPaddingRight()) : (size + getPaddingTop() + getPaddingBottom());
@@ -120,5 +114,4 @@ public class TextShowView extends View {
     private float sp2px(int sp) {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, getResources().getDisplayMetrics());
     }
-
 }

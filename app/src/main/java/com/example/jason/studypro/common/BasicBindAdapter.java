@@ -20,8 +20,6 @@ import com.example.jason.tool.TextUtils;
  * <p/>
  */
 public class BasicBindAdapter {
-
-
     @BindingAdapter("android:src")
     public static void setSrc(ImageView view, Bitmap bitmap) {
         view.setImageBitmap(bitmap);
@@ -34,8 +32,8 @@ public class BasicBindAdapter {
 
     @BindingAdapter({"imageUrl", "placeHolder", "error"})
     public static void loadImage(final ImageView imageView, String url, Drawable holderDrawable, Drawable errorDrawable) {
-        Log.i("imageUrlCallBack",url == null ? "null" : url);
-        if (TextUtils.isEmpty(url)){
+        Log.i("imageUrlCallBack", url == null ? "null" : url);
+        if (TextUtils.isEmpty(url)) {
             return;
         }
         SimpleTarget<GlideDrawable> simpleTarget = new SimpleTarget<GlideDrawable>() {

@@ -7,14 +7,15 @@ package com.example.jason.studypro.common;
  * <p/>
  */
 public class Comparaobj {
-    private int age;
+    private int    age;
     private String name;
-    public Comparaobj(String name,int age){
+
+    public Comparaobj(String name, int age) {
         this.age = age;
         this.name = name;
     }
 
-    private  PersonalInfo personalInfo;
+    private PersonalInfo personalInfo;
 
     public PersonalInfo getPersonalInfo() {
         return personalInfo;

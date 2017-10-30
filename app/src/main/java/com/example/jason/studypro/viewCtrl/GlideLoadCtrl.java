@@ -9,13 +9,13 @@ import com.example.jason.studypro.viewModel.GlideLoadModel;
  * <p/>
  */
 public class GlideLoadCtrl {
-
     private GlideLoadModel viewModel;
-    public GlideLoadCtrl(){
+
+    public GlideLoadCtrl() {
         viewModel = new GlideLoadModel();
     }
 
-    public void onClickLoad(){
+    public void onClickLoad() {
         viewModel.setImageUrl("http://p1.pstatp.com/large/166200019850062839d3");
     }
 
