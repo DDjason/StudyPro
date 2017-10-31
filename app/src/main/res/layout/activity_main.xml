@@ -18,6 +18,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+          <com.example.jason.studypro.myView.WeekView
+              android:id="@+id/week_view"
+              android:layout_width="match_parent"
+              android:layout_height="70dp">
+
+          </com.example.jason.studypro.myView.WeekView>
             <com.example.jason.studypro.myView.MyTextShowView
                 android:layout_width="match_parent"
                 android:layout_height="200px" />

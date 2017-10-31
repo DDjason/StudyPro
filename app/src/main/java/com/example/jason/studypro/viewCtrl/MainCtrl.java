@@ -67,6 +67,18 @@ public class MainCtrl {
         }
 
         this.binding = binding;
+        List<String> mml = new ArrayList<>();
+       for (int i = 1 ; i < 15 ; i ++)
+       {
+           mml.add(i+"");
+
+       }
+        binding.weekView.setData(mml, new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                return;
+            }
+        });
         data = new ArrayList<>();
         data.clear();
         data.add(new Comparaobj("tom", 23));
@@ -194,6 +206,7 @@ public class MainCtrl {
                     @Override
                     public void onError(SHARE_MEDIA share_media, Throwable throwable) {
                         Log.i("onError",new Gson().toJson(share_media));
+                        throwable.printStackTrace();
 
                     }
 
