@@ -166,6 +166,9 @@ public class MainCtrl {
     public void onClickPsw(View view) {
         ARouter.getInstance().build(RoutePath.PSWTEXT_VIEW_SHOW).navigation();
     }
+    public void onClickPdv(View view) {
+        ARouter.getInstance().build(RoutePath.PSWTEXT_VIEW_SHOW).navigation();
+    }
 
     public void onClickGlide() {
         ARouter.getInstance().build(RoutePath.Glide_Lode_SHOW).navigation();
