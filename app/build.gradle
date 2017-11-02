@@ -71,4 +71,8 @@ dependencies {
     compile project(':tool')
     compile files('libs/weiboSDKCore.jar')
     compile files('libs/umeng_shareboard_widget.jar')
+
+
+    //组件库
+    compile 'com.android.support:design:26.+'
 }
