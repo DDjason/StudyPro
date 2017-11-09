@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.jason.studypro.databinding.ActivityMainBinding;
 import com.example.jason.studypro.viewCtrl.MainCtrl;
+import com.example.jason.tool.PhotoLogicalUtil;
 import com.umeng.socialize.UMShareAPI;
 
 public class MainAct extends AppCompatActivity {
@@ -23,6 +24,8 @@ public class MainAct extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        PhotoLogicalUtil.onActivityResult(this,requestCode,resultCode,data);
         UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
     }
+
 }

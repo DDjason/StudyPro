@@ -24,6 +24,7 @@ import com.example.jason.studypro.common.PersonalInfo;
 import com.example.jason.studypro.constant.RoutePath;
 import com.example.jason.studypro.databinding.ActivityMainBinding;
 import com.example.jason.tool.FileUtil;
+import com.example.jason.tool.PhotoLogicalUtil;
 import com.google.gson.Gson;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareListener;
@@ -142,7 +143,10 @@ public class MainCtrl {
 
     public void onClickRecycle(View view) {
         Log.i(this.getClass().getName(), "onClickRecycle");
-        ARouter.getInstance().build(RoutePath.RECYCLE_VIEW_SHOW).navigation();
+        //ARouter.getInstance().build(RoutePath.RECYCLE_VIEW_SHOW).navigation();
+        FileUtil.makeRootDirectory(FileUtil.getRootDir() + "photoMyy");
+        File file = new File( FileUtil.makeFilePath(FileUtil.getRootDir() , "photoMyy"),"temp.jpg");
+        //PhotoLogicalUtil.takePhoto(AndroidUtil.getActivity(view),Uri.fromFile(file));
     }
 
     public static String SAVED_IMAGE_DIR_PATH = Environment.getExternalStorageDirectory().getPath();
@@ -187,7 +191,7 @@ public class MainCtrl {
     }
 
     public void onCoordinatorLayout(View view){
-        ARouter.getInstance().build(RoutePath.COOLDINATOR_LAYOUT).navigation();
+        ARouter.getInstance().build(RoutePath.HOME_CTRL).navigation();
     }
 
     public void onClickUM(View view){
